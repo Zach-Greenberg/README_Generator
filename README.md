@@ -19,6 +19,9 @@ This is a command-line application that runs with Node.js that generates a READM
 Clone the repo to your own computer using Terminal/GitBash. Once cloned, open terminal/bash in the location of the index.js file. Then type the command: npm install, this will allow the package inquirer, and fs to be installed.
 ![Install Step](./img/npmInstall.jpg)
 
+Here is a video on how to install and use this application.
+[Video Tutorial Link](https://drive.google.com/file/d/1rv4SDWXV4Y1a-I2mOIlv0AcJO0dM53Gu/view?usp=sharing)
+
 ## Usage
 Once installation has completed, open terminal/bash to the folder with index.js if not there already. Type the command: node index.js. You will then be prompted with questions to answer. These answers will populate a generate README.md file at the end.
 
