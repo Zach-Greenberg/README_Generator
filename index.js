@@ -47,8 +47,6 @@ async function userResponse() {
 
     ])
 
-    console.log(userInput);
-
     const readME = (`
 # ${userInput.title}
 ## Description
