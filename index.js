@@ -21,7 +21,7 @@ async function userResponse() {
         },
         {
             name: "contribution",
-            message: "Provide the Github username of those, if any, that helped on this project."
+            message: "Provide the Github username of those that helped on this project. (Don't forget to add your own username as well)"
         },
         {
             name: "test",
@@ -46,6 +46,47 @@ async function userResponse() {
 
     ])
 
-console.log(userInput);
+    console.log(userInput);
+
+    const readME = (`
+# ${userInput.title}
+## Description
+${userInput.description}
+\n* [Installation](#Installation)
+\n* [Usage](#Usage)
+\n* [License](#License)
+\n* [Contributors](#Contributors)
+\n* [Tests](#Tests)
+\n* [Questions](#Questions)
+
+## Installation
+${userInput.install}
+
+## Usage
+${userInput.usage}
+
+## License 
+This project is licensed under the ${userInput.license}
+
+## Contributors
+${userInput.contribution}
+
+## Tests
+${userInput.test}
+
+## Questions
+**Please ask any questions to the following**
+\nEmail: ${userInput.email}
+\nGitHub: https://github.com/${userInput.github}`
+);
+    console.log(readME);
+
+    fs.writeFile("README.md", readME, function(err){
+        if (err) {
+            throw err;
+        }
+        console.log("Successfully generated README.md")
+    });
+
 }
 userResponse();
