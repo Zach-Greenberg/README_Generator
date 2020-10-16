@@ -28,16 +28,17 @@ async function userResponse() {
             message: "Provide test instructions so the user can test the application"
         },
         {
-            tyoe: "list",
+            type: "list",
             name: "license",
             message: "Choose a License to use", 
-            // need to add a section of the readme which explains which license the app is covered under
-            choices: []
+            choices: ['MIT License [![MIT License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)',
+             'GPL License [![GPL License](https://img.shields.io/badge/license-GPL-blue)](https://marketplace.eclipse.org/)',
+             'Apache 2 License [![Apache 2 License](https://img.shields.io/badge/license-Apache%202-blue)](https://www.apache.org/licenses/LICENSE-2.0)',
+             'PyPI License [![PyPI License](https://img.shields.io/badge/license-BSD-green)](https://pypi.org/project/license/)']
         },
         {
             name: "github",
             message: "What is your Github user name?"
-            // add link to github username page under questions tab
         },
         {
             name: "email",
@@ -83,7 +84,7 @@ ${userInput.test}
 
     fs.writeFile("README.md", readME, function(err){
         if (err) {
-            throw err;
+            console.log("There was an error, please rerun the application to create your README.md file.");
         }
         console.log("Successfully generated README.md")
     });
